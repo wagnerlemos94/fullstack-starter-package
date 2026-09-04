@@ -14,11 +14,11 @@ Ou informe tudo pela linha de comando:
 
 ```powershell
 .\criar-projeto.ps1 `
-  -Nome "Gestao Escolar" `
-  -Descricao "Sistema para administracao escolar" `
-  -PacoteJava "br.com.digidatasistemas.gestaoescolar" `
-  -GrupoMaven "br.com.digidatasistemas" `
-  -Destino "E:\projetos\gestao-escolar" `
+  -Nome "Meu Projeto" `
+  -Descricao "Descricao do meu projeto" `
+  -PacoteJava "br.com.empresa.meuprojeto" `
+  -GrupoMaven "br.com.empresa" `
+  -Destino "C:\projetos\meu-projeto" `
   -NaoInterativo
 ```
 
@@ -31,4 +31,4 @@ O script cria uma nova pasta e preserva este starter. Ele atualiza:
 - nome padrao sugerido para o banco;
 - documentacao README e OpenAPI.
 
-O destino precisa ser uma pasta nova, fora deste starter pack. Se `-Destino` for omitido, o projeto sera criado ao lado do starter usando o nome normalizado (por exemplo, `Gestao Escolar` vira `gestao-escolar`).
+O destino precisa ser uma pasta nova, fora deste starter pack. Se `-Destino` for omitido, o projeto sera criado ao lado do starter usando o nome normalizado (por exemplo, `Meu Projeto` vira `meu-projeto`).
