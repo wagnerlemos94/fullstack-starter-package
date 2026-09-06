@@ -147,7 +147,7 @@ try {
     Move-Item -LiteralPath $oldTestPackage -Destination $newTestPackage
 
     Rename-Item -LiteralPath (Join-Path $newMainPackage 'StarterPackageApplication.java') -NewName "$applicationClass.java"
-    $testFile = Get-ChildItem -LiteralPath $newTestPackage -File -Filter '*.java' | Select-Object -First 1
+    $testFile = Get-Item -LiteralPath (Join-Path $newTestPackage 'GestaoEscolarApplicationTests.java') -ErrorAction SilentlyContinue
     if ($testFile) {
         $testClass = "${applicationClass}Tests"
         $testContent = [IO.File]::ReadAllText($testFile.FullName).Replace('GestaoEscolarApplicationTests', $testClass)
