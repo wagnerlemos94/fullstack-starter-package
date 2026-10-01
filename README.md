@@ -32,3 +32,15 @@ O script cria uma nova pasta e preserva este starter. Ele atualiza:
 - documentacao README e OpenAPI.
 
 O destino precisa ser uma pasta nova, fora deste starter pack. Se `-Destino` for omitido, o projeto sera criado ao lado do starter usando o nome normalizado (por exemplo, `Meu Projeto` vira `meu-projeto`).
+## Repositórios e documentação
+
+- [Backend Spring Boot](https://github.com/wagnerlemos94/starter-package-api): configuração, autenticação e contrato REST no [README do backend](backend/README.md).
+- [Frontend Next.js](https://github.com/wagnerlemos94/starter-package-app): execução, sessão NextAuth e integração no [README do frontend](frontend/README.md).
+
+O projeto raiz registra as referências Git dos repositórios `backend` e `frontend`. Publique os commits desses repositórios antes de atualizar as referências no projeto raiz. Cada repositório mantém seu próprio histórico e remoto.
+
+## Contrato de paginação
+
+O backend usa `crud-core` 2.0.0 e recebe `page` (começando em zero) e `size` nas listagens. A resposta contém `content`, `page`, `size`, `totalElements` e `totalPages`.
+
+O frontend mantém `ApiResult<PageResponse<T>>` nos métodos `list`, com parâmetros opcionais e padrão `{ page: 0, size: 10 }`. As tabelas de usuários e perfis usam paginação do servidor; os formulários carregam uma única página de 20 opções. Consultas completas sem paginação devem ser implementadas por caso específico.
